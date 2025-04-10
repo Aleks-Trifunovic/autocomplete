@@ -1,9 +1,12 @@
 import "./App.css";
+import InputComponent from "./components/InputComponent";
 
 function App() {
   return (
     <>
-      <div></div>
+      <div>
+        <InputComponent />
+      </div>
     </>
   );
 }
