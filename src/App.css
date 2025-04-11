@@ -123,12 +123,14 @@ a {
   display: flex;
   margin: 15px;
   border-bottom: solid 1px rgb(201, 198, 198);
+  padding-bottom: 15px;
 }
 
 .phoneSection {
   display: flex;
   margin: 15px;
   border-bottom: solid 1px rgb(201, 198, 198);
+  padding-bottom: 15px;
 }
 .label {
   width: 70px;
@@ -141,8 +143,8 @@ a {
 }
 .closeButton {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 10px;
+  right: 20px;
   cursor: pointer;
 }
 @media (max-width: 600px) {
