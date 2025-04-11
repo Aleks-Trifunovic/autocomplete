@@ -44,13 +44,16 @@ export default function InputComponent() {
   return (
     <div className="mainContainer">
       <div className="searchContainer">
-        <input
-          className="inputField"
-          type="text"
-          value={userInput}
-          onChange={handleChange}
-          placeholder="Search contacts..."
-        />
+        <div className="wrapper">
+          <div className="searchIcon"></div>
+          <input
+            className="inputField"
+            type="text"
+            value={userInput}
+            onChange={handleChange}
+            placeholder="Search contacts..."
+          />
+        </div>
         <div className="dropdown">
           {userInput && data?.results?.length > 0 && (
             <div className="personContainer">
