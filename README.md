@@ -1,3 +1,5 @@
+# Autocomplete function for search bar
+
 # React + Vite
 
 Auto-Complete Input for Contacts Search
