@@ -4,6 +4,7 @@ export default function InputComponent() {
   const [userInput, setUserInput] = useState("");
   const [data, setData] = useState({});
   const [selectedContact, setSelectedContact] = useState(undefined);
+  const [isSelectedContactVisible, setSelectedContactVisible] = useState(false);
 
   const handleChange = (event) => {
     setUserInput(event.target.value);
@@ -11,8 +12,9 @@ export default function InputComponent() {
 
   const handleDropdownContactClicked = (person) => {
     setSelectedContact(person);
-    setData({});
     setUserInput("");
+    setData({});
+    setSelectedContactVisible(true);
   };
   const url =
     "https://jlipiyayfklx2xvckt577hvn5i0phffc.lambda-url.eu-central-1.on.aws";
@@ -47,6 +49,7 @@ export default function InputComponent() {
           type="text"
           value={userInput}
           onChange={handleChange}
+          placeholder="Search contacts..."
         />
         <div className="dropdown">
           {userInput && data?.results?.length > 0 && (
@@ -74,7 +77,9 @@ export default function InputComponent() {
               })}
             </div>
           )}
-          {userInput && data?.results?.length === 0 && <div>Nothing found</div>}
+          {userInput && data?.results?.length === 0 && (
+            <div className="nothingFound">Nothing found</div>
+          )}
           {/* {userInput && data && data.results && data.results.length === 0 && (
           <div>Nothing found</div>
         )} */}
@@ -82,7 +87,51 @@ export default function InputComponent() {
         </div>
         {/* add more in line below */}
       </div>
-      <div className="selectedContact">{selectedContact?.name}</div>
+      {isSelectedContactVisible && (
+        <div className="selectedContact">
+          <div
+            onClick={() => setSelectedContactVisible(false)}
+            className="closeButton"
+          >
+            X
+          </div>
+          <div className="imageAndNameSection">
+            <div>
+              <img
+                className="selectedContactAvatar"
+                src={selectedContact?.avatar}
+                alt="Avatar of a person"
+              />
+            </div>
+            <div className="nameAndEmailSection">
+              <div className="selectedContactName">{selectedContact?.name}</div>
+              <div className="selectedContactemail">
+                {selectedContact?.email}
+              </div>
+            </div>
+          </div>
+          <div className="addressSection">
+            <span className="label">Address:</span>
+            <div className="selectedContactAddress">
+              {selectedContact?.address}
+            </div>
+          </div>
+          <div className="phoneSection">
+            <span className="label">Phone:</span>
+            <div className="selectedContactPhone">{selectedContact?.phone}</div>
+          </div>
+          <div className="websiteSection">
+            <span className="label">Website: </span>
+            <a
+              className="selectedContactWebsite"
+              href="https://www.google.de/"
+              target="_blank"
+            >
+              {selectedContact?.website}
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

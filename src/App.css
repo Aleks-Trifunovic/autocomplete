@@ -3,46 +3,64 @@
   padding: 0;
 }
 .appContainer {
-  background-color: lightgray;
+  background-color: rgb(234, 231, 231);
 }
 p {
   margin: 0;
+}
+
+a {
+  cursor: pointer;
 }
 
 .mainContainer {
   min-height: 100vh;
 }
 .searchContainer {
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 10px;
   background-color: white;
-  width: 300px;
+  width: 420px;
+  box-shadow: 1px 0.4px 0.4px lightgray;
 }
 
 .person {
-  /* border: blue 1px solid; */
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding: 5px;
 }
 
 .person:hover {
-  background-color: rgb(174, 197, 204);
+  background-color: rgb(215, 227, 231);
+  border-radius: 10px;
 }
 
 .selectedContact {
+  position: relative;
   background-color: white;
   margin-top: 30px;
-  width: 300px;
+  width: 420px;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 1px 0.4px 0.4px lightgray;
 }
 
 .inputField {
   padding: 5px;
-  margin: 5px;
-  width: 275px;
+  width: 410px;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
 }
 
 .dropdown {
-  max-height: 180px;
+  max-height: 160px;
   overflow-y: scroll;
+  border-radius: 10px;
+  border: 0.5px;
 }
 .personContainer {
   /* border: red 1px solid; */
@@ -52,4 +70,72 @@ p {
   border-radius: 9999%;
   width: 40px;
   height: 40px;
+}
+.personInfo {
+  padding-left: 15px;
+}
+.nothingFound {
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.selectedContactAvatar {
+  border-radius: 9999%;
+  height: 65px;
+  width: 65px;
+}
+.imageAndNameSection {
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin: 10px;
+  margin-top: 10px;
+  border-bottom: solid 1px rgb(201, 198, 198);
+  align-items: center;
+}
+.selectedContactName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.nameAndEmailSection {
+  padding-left: 10px;
+}
+
+.addressSection {
+  display: flex;
+  margin: 15px;
+  border-bottom: solid 1px rgb(201, 198, 198);
+}
+
+.phoneSection {
+  display: flex;
+  margin: 15px;
+  border-bottom: solid 1px rgb(201, 198, 198);
+}
+.label {
+  width: 70px;
+}
+.websiteSection {
+  display: flex;
+  margin: 15px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.closeButton {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .inputField {
+    width: 280px;
+  }
+  .searchContainer,
+  .selectedContact {
+    width: 290px;
+  }
 }
