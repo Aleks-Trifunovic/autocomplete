@@ -3,11 +3,9 @@ import InputComponent from "./components/InputComponent";
 
 function App() {
   return (
-    <>
-      <div>
-        <InputComponent />
-      </div>
-    </>
+    <div className="appContainer">
+      <InputComponent />
+    </div>
   );
 }
 

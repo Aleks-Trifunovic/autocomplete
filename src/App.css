@@ -1,6 +1,55 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.appContainer {
+  background-color: lightgray;
+}
+p {
+  margin: 0;
+}
+
+.mainContainer {
+  min-height: 100vh;
+}
+.searchContainer {
+  background-color: white;
+  width: 300px;
+}
+
+.person {
+  /* border: blue 1px solid; */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.person:hover {
+  background-color: rgb(174, 197, 204);
+}
+
+.selectedContact {
+  background-color: white;
+  margin-top: 30px;
+  width: 300px;
+}
+
+.inputField {
+  padding: 5px;
+  margin: 5px;
+  width: 275px;
+}
+
+.dropdown {
+  max-height: 180px;
+  overflow-y: scroll;
+}
+.personContainer {
+  /* border: red 1px solid; */
+  background-color: white;
+}
+.personImage {
+  border-radius: 9999%;
+  width: 40px;
+  height: 40px;
 }
