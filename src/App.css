@@ -133,7 +133,8 @@ a {
   padding-bottom: 15px;
 }
 .label {
-  width: 70px;
+  font-weight: 600;
+  width: 80px;
 }
 .websiteSection {
   display: flex;
